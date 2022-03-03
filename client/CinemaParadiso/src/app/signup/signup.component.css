@@ -1,0 +1,12 @@
+/* .stylingtext{
+    color: white;
+    font-family: "Roboto Condensed", Sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 10px;
+} */
+.card
+{
+    background-color: #000000 !important;
+    opacity: 90%;
+}

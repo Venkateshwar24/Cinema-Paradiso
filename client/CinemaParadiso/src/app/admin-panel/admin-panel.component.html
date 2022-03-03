@@ -1,0 +1,23 @@
+<div class="container">
+<div class="heading pt-3">Pending Approvals</div>
+    <div class="card bg-color m-3 " *ngFor="let movie of movies" >
+        <div class="card-header bg-light text-dark">
+            <i class="fa fa-user-o pr-2" aria-hidden="true"></i>{{movie.user_name}}
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="card-body">
+
+                <h3 class="card-title">{{movie.movie_title}}</h3>
+
+            </div>
+            <div class="my-auto mx-2">
+                <a href="#" class="btn btn-sm btn-primary" [routerLink]="['/database/admin/movies',movie._id]">View Details <strong>></strong></a>
+            </div>
+        </div>
+        <div class="card-footer"> <small class="text-muted"><i class="fa fa-clock-o pr-1 text-secondary" aria-hidden="true"></i>  {{movie.creation_time }} - {{movie.creation_date}}</small></div>
+    </div>
+
+    <!-- </div> -->
+    <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Approve </label> -->
+
+</div>

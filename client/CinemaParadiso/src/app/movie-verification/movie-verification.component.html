@@ -1,0 +1,104 @@
+<div class="container">
+
+    <div *ngFor="let movie of movieData">
+        <div class="d-flex justify-content-between py-3">
+            <div class="heading ">{{movie.movie_title}}</div>
+            <div class="mr-2"><i class="fa fa-pencil fa-2x text-light " aria-hidden="true"></i>
+            </div>
+        </div>
+
+        <ol class="list-group ">
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-2">Movie Poster </div>
+                    <img src='http://localhost:8000/{{movie.movie_poster}}' class="card-img-top   p-0" alt="movie_image"
+                        style="height: 250px;">
+
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-red text-light mr-2" (click)="onDenial(movie)">x</button>
+
+                    <button class="btn btn-sm btn-green text-light" (click)="onApproval(movie)">🗸</button>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Movie Name </div>
+                    {{movie.movie_title}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Release Year</div>
+                    {{movie.release_year}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Movie Running Time </div>
+                    {{movie.running_min}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Movie Description</div>
+                    {{movie.movie_desc}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold  mb-1">Movie Director </div>
+                    {{movie.movie_director}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto ">
+                    <div class="fw-bold mb-1">Streaming Platform</div>
+                    {{movie.streaming_platform}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto ">
+                    <div class="fw-bold mb-1">Movie Language </div>
+                    {{movie.movie_language}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Movie Country </div>
+                    {{movie.movie_country}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Movie Region </div>
+                    {{movie.movie_region}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Genres </div>
+                    <ul *ngFor="let genre of movie.genres_list">
+                        <li> {{genre}}</li>
+                    </ul>
+
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Wikipedia Link </div>
+                    <button class="btn btn-light btn-lg py-0 "> <a href='{{movie.wikipedia_url}}' class="card-link"
+                            style="text-decoration: none; color: black;">Wikipedia Link</a> </button>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start bg-color">
+                <div class="ms-2 me-auto">
+                    <div class="fw-bold mb-1">Uploaded by </div>
+                    {{movie.user_name}}
+                </div>
+            </li>
+
+        </ol>
+    </div>
+
+</div>

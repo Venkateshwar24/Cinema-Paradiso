@@ -1,0 +1,50 @@
+<div class="container ">
+
+
+
+
+    <app-carousal></app-carousal>
+
+
+
+
+
+
+    <div class="heading pb-3 mt-4">Top Rated Movies</div>
+
+    <app-movie-card [movieData]="movies"></app-movie-card>
+
+
+    <ng-template #content let-modal>
+        <div class="modal-header bg-warning">
+            <h4 class="modal-title fw-bold text-center" id="modal-basic-title"> GIVE YOUR RATINGS FOR
+                {{modalContent.movie_title |
+                uppercase}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body mx-auto ">
+            <form class="form" [formGroup]="RatingData" (ngSubmit)="onSubmitRating(modalContent._id)">
+
+                <ul class="list-inline rating-list " *ngFor="let star of stars" style="display: inline-block">
+                    <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                        <input formControlName="user_rating" hidden>
+
+                        <i class="fa fa-star fa-3x "></i>
+                    </li>
+                </ul>
+                <input formControlName="user_id" hidden>
+                <input formControlName="movie_id" hidden>
+
+                <button class="btn btn-warning modal-footer mx-auto ">Submit Rating</button>
+            </form>
+        </div>
+
+    </ng-template>
+
+
+
+
+
+</div>

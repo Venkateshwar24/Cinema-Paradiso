@@ -1,0 +1,42 @@
+<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://localhost:8000/uploads//Wallpaper.jpg" class="d-block w-100" alt="..." >
+       
+      </div>
+      
+    </div>
+  </div>
+ -->
+ <body style="background-image: url(http://localhost:8000/uploads//Wallpaper.jpg);">
+<div class="container">
+
+    <div class="row pt-5">
+        <div class="col-md-4 mx-auto">
+            <div class="card rounded-5  ">
+                <div class="card-header stylingtext">
+                    LOG IN
+                </div>
+                <div class="card-body">
+                    <form class="form">
+                        <div class="form-group stylingtext">
+                            <label for="">Email id</label>
+                            <input [(ngModel)]="loginUserData.email_id" type="email" class="form-control rounded-5"
+                                name="email_id" required>
+                        </div>
+                        <div class="form-group stylingtext">
+                            <label for="">password</label>
+                            <input [(ngModel)]="loginUserData.user_password" type="password"
+                                class="form-control rounded-5" name="user_password" required>
+                        </div>
+                        <div class=" stylingtext">
+                            <button (click)="onLogin()" class="btn bg-theme float-right ">LOG IN
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,30 @@
+/* .bg-color{
+    background-color: #0f0f0f !important;
+    color: white;
+   
+}
+.stylingtext{
+    color: white;
+    font-family: "Roboto Condensed", Sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-top: 10px;
+} */
+.img-thumbnail{
+    border: none !important;
+    background: none !important;
+}
+
+.reviews{
+    background-color: #0f0f0f ;
+}
+.input{
+    border: none;
+    background-color: #161616;
+    color: white;
+}
+.reviewsText
+{
+    font-family: "Roboto Condensed";
+}

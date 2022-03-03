@@ -1,0 +1,45 @@
+
+<div class="row row-cols-1 row-cols-md-4 row-cols-sm-3 row-cols-lg-5 row-cols-2 g-4 ">
+<div *ngFor="let movie of movieData ">
+    <div class="card h-100 bg-color shadow-sm  ">
+        <img src='http://localhost:8000/{{movie.movie_poster}}' class="card-img-top   p-0" alt="movie_image"
+            style="height: 250px;">
+        <div class="card-body" >
+            <div class="card-title" style="height: 40%;"><a [routerLink]="['/moviesuggestions',movie._id]" style="text-decoration: none;">
+                    <div class="bg-color ">{{movie.movie_title}} </div>
+
+                </a>
+                <small class="text-muted" *ngIf="profileView !=true"> <i class="fa fa-user-o " aria-hidden="true"></i>
+                    {{movie.user_name }} </small>
+                    <div *ngIf="profileView" class="text-muted"> <i class="fa fa-clock-o mr-2" aria-hidden="true"></i>
+                         {{movie.creation_date}}  </div>
+            </div>
+
+            <div class="d-flex justify-content-between py-2" >
+                <div>
+                    <i class="fa fa-star-o fa-2x text-warning pr-2"></i> <span
+  
+                    style="color: #00ac2b;">{{movie.avg_rating | number:'1.0-2'}}</span>
+                </div>
+                <div><i class="fa fa-thumbs-o-up text-success fa-2x pr-2" aria-hidden="true"></i>
+
+                    <span style="color: #ffd700;">{{movie.total_votes}}</span>
+                </div>
+            </div>
+
+            <div class="badge rounded-pill bg-theme text-black  py-2 " style="width: 100%;">
+                {{movie.streaming_platform}}
+            </div>
+
+        </div>
+        <div class="card-footer text-center">
+            <app-rating [movieData]="movie" *ngIf="profileView!=true"></app-rating>
+            <div *ngIf="profileView===true" class="py-2" style="width: 100%;">
+                <span class="btn-green badge  py-2 px-4 " *ngIf="movie.isVerified===true">Approved</span>
+                <span class="btn-red badge  py-2 px-4 " *ngIf="movie.isVerified===false">Not Approved</span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>

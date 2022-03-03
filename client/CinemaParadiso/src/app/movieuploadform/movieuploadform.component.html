@@ -1,0 +1,89 @@
+<div class="container mt-5">
+    
+        <div class="card rounded-5 px-3 ">
+            <div class="card-header stylingtext">
+                Upload new movie
+            </div>
+            <div class="card-body ">
+                <form class="form" [formGroup]="newMovieData" (ngSubmit)="onMovieSubmit()">
+                    <div class="form-group stylingtext ">
+                        <label for="" class="pb-2">Movie Name</label>
+                        <input type="text" class="form-control rounded-5" formControlName="movie_title" required>
+                    </div>
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Release year</label>
+                        <input type="text" class="form-control rounded-5" formControlName="release_year" required>
+                    </div>
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Description</label>
+                        <textarea type="text" class="form-control rounded-5" formControlName="movie_desc"
+                            required></textarea>
+                    </div>
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Running Minutes</label>
+                        <input type="text" class="form-control rounded-5" formControlName="running_min" required>
+                    </div>
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Director</label>
+                        <input type="text" class="form-control rounded-5" formControlName="movie_director" required>
+                    </div>
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Streaming Platform</label>
+                        <input type="text" class="form-control rounded-5" formControlName="streaming_platform" required>
+                    </div>
+                   
+                        
+                        <div class="form-group stylingtext mt-3">
+                            <label for="" class="pb-2">Movie Country</label>
+                            <select class="form-select" aria-label="Default select example" formControlName="movie_country">
+                                
+                                <option  *ngFor="let country of countries" [value]="country.country" >{{country.country}}</option>
+                              </select>
+                            </div> 
+    
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Region</label>
+                        <input  class="form-control rounded-5" formControlName="movie_region" required >
+                    </div>
+
+                    
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Language</label>
+                        <select class="form-select" aria-label="Default select example" formControlName="movie_language">
+                            
+                            <option  *ngFor="let language of languages"  >{{language.name}}</option>
+                          </select>
+                        </div> 
+
+                    <div class="mb-3 stylingtext mt-3">
+                        <label for="formFile" class="form-label ">Movie poster</label>
+                        <input class="form-control" type="file" id="formFile" formControlName="movie_poster"
+                            (change)="onFileChange($event)">
+                    </div>
+
+                    <div class="form-group stylingtext mt-3">
+                        <label for="" class="pb-2">Movie Wikipedia URL</label>
+                        <input type="text" class="form-control rounded-5" formControlName="wikipedia_url" required>
+                    </div>
+                    <div class="form-group stylingtext mt-3 row px-3 pb-2">
+                        <label for="" class="pb-4">Genre</label>
+
+                        <div class="form-check col- col-md-4 col-sm-2 " *ngFor="let genre of genres">
+                            <input class="form-check-input" type="checkbox" formControlName="genres_list"
+                                (change)="onChangeSelection($event.target.checked,genre.genre_name)"
+                                [checked]="checked(genre.genre_name)" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                {{genre.genre_name}}
+                            </label>
+                        </div>
+                    </div>
+                   
+                    <div class=" stylingtext mt-3">
+                        <button class="btn bg-theme float-right" (change)="onMovieSubmit()">SUBMIT
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+</div>

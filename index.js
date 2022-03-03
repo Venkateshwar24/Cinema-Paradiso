@@ -1,0 +1,22 @@
+const express = require('express');
+const app = express();
+const {mongoose} = require('./db');
+const cors = require('cors');
+const bodyParser=require('body-parser');
+const moviecontroller = require('./controller/moviecontroller');
+const usercontroller = require('./controller/usercontroller');
+const genrecontroller = require('./controller/genrecontroller');
+const ratingController = require('./controller/ratingcontroller');
+const reviewController = require('./controller/reviewcontroller');
+app.use(bodyParser.json());
+app.use(cors());
+app.use('/movies',moviecontroller);
+app.use('/uploads',express.static('uploads'));
+app.use('/users',usercontroller);
+app.use('/genres',genrecontroller);
+app.use('/ratings',ratingController);
+app.use('/reviews',reviewController);
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+    console.log(`Server running at port ${PORT} successfully!`);
+});

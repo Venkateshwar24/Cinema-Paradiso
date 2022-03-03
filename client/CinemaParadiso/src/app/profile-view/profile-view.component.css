@@ -1,0 +1,26 @@
+/* .stylingtext{
+    color: white;
+    font-family: "Roboto Condensed", Sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    
+    padding-top: 10px;
+} */
+.img-thumbnail{
+    border: none !important;
+    background: none !important;
+}
+/* .bg-color{
+    background-color: #0f0f0f !important;
+    color: white;
+}
+.heading{
+    font-family: "Roboto Condensed", Sans-serif;
+        font-size: 2em;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1em;
+        letter-spacing: 1px;
+        color: white;
+        
+    } */

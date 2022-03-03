@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <mat-card *ngFor="let detail of userDetails" class="bg-color">
+        <mat-card-title class="mb-4  d-flex justify-content-between">
+            <div>Your Profile</div>
+            <div class="mr-2"><i class="fa fa-pencil " aria-hidden="true"></i>
+            </div>
+        </mat-card-title>
+        <mat-card-subtitle class="bg-light text-dark p-2 my-4 ">
+            <span>
+                <strong class="mr-2">User Name : </strong>{{detail.user_name}}
+            </span>
+
+        </mat-card-subtitle>
+        <mat-card-subtitle class="bg-light text-dark p-2 my-4 ">
+            <span>
+                <strong class="mr-2">User Email id : </strong>{{detail.email_id}}
+            </span>
+        </mat-card-subtitle>
+        <mat-card-subtitle class="bg-light text-dark p-2 my-4 ">
+            <span>
+                <strong class="mr-2">User Mobile No :</strong>{{detail.mob_no}}
+            </span>
+        </mat-card-subtitle>
+        <mat-card-actions align="end">
+            <button mat-button class="bg-theme text-dark">Save</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+
+
+
+
+
+
+
+<div class="container pt-5" style="color: white;">
+    <div class="heading my-4"> YOUR UPLOADS</div>
+<app-movie-card [movieData]="uploaded_movies" [profileView]=true></app-movie-card>
+
+</div>
